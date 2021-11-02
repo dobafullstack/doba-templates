@@ -12,6 +12,20 @@ const cp = require("child_process");
     },
   ]);
 
+  const { PORT } = await inquirer.prompt([
+    {
+      type: "input",
+      name: "PORT",
+    },
+  ]);
+
+  const { MONGODB_URL } = await inquirer.prompt([
+    {
+      type: "input",
+      name: "MONGODB_URL",
+    },
+  ]);
+
   switch (framework) {
     case "GraphQL":
       const { DB_USERNAME } = await inquirer.prompt([
@@ -26,22 +40,10 @@ const cp = require("child_process");
           name: "DB_PASSWORD",
         },
       ]);
-      const { PORT } = await inquirer.prompt([
-        {
-          type: "input",
-          name: "PORT",
-        },
-      ]);
       const { SESSION_SECRET } = await inquirer.prompt([
         {
           type: "input",
           name: "SESSION_SECRET",
-        },
-      ]);
-      const { MONGODB_URL } = await inquirer.prompt([
-        {
-          type: "input",
-          name: "MONGODB_URL",
         },
       ]);
       cp.execSync(
@@ -49,21 +51,9 @@ const cp = require("child_process");
       );
       break;
     case "ExpressJS":
-      const { PORT } = await inquirer.prompt([
-        {
-          type: "input",
-          name: "PORT",
-        },
-      ]);
-
-      const { MONGODB_URL } = await inquirer.prompt([
-        {
-          type: "input",
-          name: "MONGODB_URL",
-        },
-      ]);
-
-      cp.execSync(`sh ./node_modules/doba-template/expressjs-init.sh ${PORT} ${MONGODB_URL}`);
+      cp.execSync(
+        `sh ./node_modules/doba-template/expressjs-init.sh ${PORT} ${MONGODB_URL}`
+      );
       break;
     default:
       console.log("Choose your option");
