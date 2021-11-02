@@ -14,8 +14,8 @@ touch .env .env.example .gitignore
 echo "PORT = your_port
 MONGODB_URL = your_mongodb_url" >> .env.example
 
-echo "PORT = 
-MONGODB_URL = " >> .env
+echo "PORT = $1
+MONGODB_URL = $2" >> .env
 
 echo "/node_modules
 /build

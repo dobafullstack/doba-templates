@@ -8,5 +8,6 @@
   "license": "MIT",
   "dependencies": {
     "inquirer": "^8.2.0"
-  }
+  },
+  "repository": "https://github.com/dobafullstack/doba-templates.git"
 }

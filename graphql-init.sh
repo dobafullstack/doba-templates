@@ -10,11 +10,11 @@ touch .env .env.example .gitignore .prettierrc tsconfig.json
 
 sed -i '5 i\"scripts": {"start": "node ./build/index.js", "dev": "nodemon ./src/index.ts", "build": "rm -rf ./build && tsc"},' ./package.json
 
-echo "DB_USERNAME = 
-DB_PASSWORD = 
-PORT = 
-SESSION_SECRET = 
-MONGODB_URL = " >> .env
+echo "DB_USERNAME = $1
+DB_PASSWORD = $2
+PORT = $3
+SESSION_SECRET = $4
+MONGODB_URL = $5" >> .env
 
 echo "DB_USERNAME = your_username
 DB_PASSWORD = your_password
