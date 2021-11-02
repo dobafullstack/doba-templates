@@ -88,7 +88,7 @@ import AuthResolver from './Resolvers/Auth';
 const main = async () => {
     await createConnection({
         type: 'postgres',
-        database: '',
+        database: '$6',
         username: process.env.DB_USERNAME,
         password: process.env.DB_PASSWORD,
         logging: true,

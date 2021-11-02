@@ -40,6 +40,12 @@ const cp = require("child_process");
           name: "DB_PASSWORD",
         },
       ]);
+      const { database } = await inquirer.prompt([
+        {
+          type: "input",
+          name: "database",
+        },
+      ]);
       const { SESSION_SECRET } = await inquirer.prompt([
         {
           type: "input",
@@ -47,7 +53,7 @@ const cp = require("child_process");
         },
       ]);
       cp.execSync(
-        `sh ./node_modules/doba-template/graphql-init.sh ${DB_USERNAME} ${DB_PASSWORD} ${PORT} ${SESSION_SECRET} ${MONGODB_URL}`
+        `sh ./node_modules/doba-template/graphql-init.sh ${DB_USERNAME} ${DB_PASSWORD} ${PORT} ${SESSION_SECRET} ${MONGODB_URL} ${database}`
       );
       break;
     case "ExpressJS":
