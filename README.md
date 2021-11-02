@@ -1,16 +1,26 @@
 # Installation
-### If you use npm
+
+## Init your project
 ```bash
-    npm install --save-dev doba-template
+npm init -y
 ```
 ### If you use yarn 
 ```bash
-    yarn add -D doba-template
+yarn init -y
+```
+## Install dependencies
+### If you use npm
+```bash
+npm install --save-dev doba-template
+```
+### If you use yarn 
+```bash
+yarn add -D doba-template
 ```
 
 # Usage
 
 ### Run this command
 ```bash
-    npx doba-template
+npx doba-template
 ```
