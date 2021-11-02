@@ -24,3 +24,51 @@ yarn add -D doba-template
 ```bash
 npx doba-template
 ```
+
+# GraphQL template
+```bash
+.env.example
+.gitignore
+.prettierrc
+package.json        
+src
+   |-- Configs      
+   |   |-- Logger.ts
+   |-- Constants    
+   |   |-- index.ts 
+   |-- Entities
+   |   |-- User.ts
+   |-- Resolvers
+   |   |-- Auth.ts
+   |   |-- Hello.ts
+   |-- Types
+   |   |-- Context.ts
+   |   |-- FieldError.ts
+   |   |-- InputType
+   |   |   |-- RegisterInput.ts
+   |   |-- Mutation
+   |   |   |-- MutationResponse.ts
+   |   |   |-- UserMutationResponse.ts
+   |-- Utils
+   |   |-- Validation.ts
+   |-- index.ts
+tsconfig.json
+yarn.lock
+```
+
+# ExpressJS template
+```bash
+.env.example
+.gitignore
+.prettierrc
+package.json
+src
+   |-- Configs
+   |   |-- Logger.ts
+   |   |-- mongoose.ts
+   |-- Routes
+   |   |-- index.routes.ts
+   |-- index.ts
+tsconfig.json
+yarn.lock
+```
