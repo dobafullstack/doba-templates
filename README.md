@@ -38,6 +38,8 @@ src
    |   |-- index.ts 
    |-- Entities
    |   |-- User.ts
+   |-- Middlewares
+   |-- Models
    |-- Resolvers
    |   |-- Auth.ts
    |   |-- Hello.ts
@@ -66,8 +68,14 @@ src
    |-- Configs
    |   |-- Logger.ts
    |   |-- mongoose.ts
+   |-- Constants
+   |-- Controllers
+   |-- Middlewares
+   |-- Models
    |-- Routes
    |   |-- index.routes.ts
+   |-- Services
+   |-- Utils
    |-- index.ts
 tsconfig.json
 yarn.lock
