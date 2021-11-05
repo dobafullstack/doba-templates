@@ -3,23 +3,17 @@ const inquirer = require("inquirer");
 const cp = require("child_process");
 
 (async () => {
-    const { framework } = await inquirer.prompt([
+    const { framework, PORT, MONGODB_URL } = await inquirer.prompt([
         {
             type: "list",
             message: "Pick a framework you'r using:",
             name: "framework",
             choices: ["GraphQL", "ExpressJS"],
         },
-    ]);
-
-    const { PORT } = await inquirer.prompt([
         {
             type: "input",
             name: "PORT",
         },
-    ]);
-
-    const { MONGODB_URL } = await inquirer.prompt([
         {
             type: "input",
             name: "MONGODB_URL",
@@ -28,39 +22,35 @@ const cp = require("child_process");
 
     switch (framework) {
         case "GraphQL":
-            const { DB_USERNAME } = await inquirer.prompt([
-                {
-                    type: "input",
-                    name: "DB_USERNAME",
-                },
-            ]);
-            const { DB_PASSWORD } = await inquirer.prompt([
-                {
-                    type: "input",
-                    name: "DB_PASSWORD",
-                },
-            ]);
-            const { database } = await inquirer.prompt([
-                {
-                    type: "input",
-                    name: "database",
-                },
-            ]);
-            const { SESSION_SECRET } = await inquirer.prompt([
-                {
-                    type: "input",
-                    name: "SESSION_SECRET",
-                },
-            ]);
+            const { DB_USERNAME, DB_PASSWORD, database, SESSION_SECRET } =
+                await inquirer.prompt([
+                    {
+                        type: "input",
+                        name: "DB_USERNAME",
+                    },
+                    {
+                        type: "input",
+                        name: "DB_PASSWORD",
+                    },
+                    {
+                        type: "input",
+                        name: "database",
+                    },
+                    {
+                        type: "input",
+                        name: "SESSION_SECRET",
+                    },
+                ]);
+
             console.log("Waiting for installation...");
             cp.execSync(
-                `sh ./node_modules/doba-template/graphql-init.sh ${DB_USERNAME} ${DB_PASSWORD} ${PORT} ${SESSION_SECRET} ${MONGODB_URL} ${database}`
+                `sh ${__dirname}\\graphql-init.sh ${DB_USERNAME} ${DB_PASSWORD} ${PORT} ${SESSION_SECRET} ${MONGODB_URL} ${database}`
             );
             break;
         case "ExpressJS":
             console.log("Waiting for installation...");
             cp.execSync(
-                `sh ./node_modules/doba-template/expressjs-init.sh ${PORT} ${MONGODB_URL}`
+                `sh ${__dirname}\\expressjs-init.sh ${PORT} ${MONGODB_URL}`
             );
             break;
         default:

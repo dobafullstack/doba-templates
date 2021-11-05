@@ -1,6 +1,6 @@
 {
   "name": "doba-template",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "description": "Quickly create a system graphql-server with apollo and typeorm",
   "main": "index.js",
   "bin": "index.js",
