@@ -8,6 +8,10 @@ npm init -y
 ```bash
 yarn init -y
 ```
+### Or you can install it for global
+```bash
+npm install -g doba-template
+```
 ## Install dependencies
 ### If you use npm
 ```bash
